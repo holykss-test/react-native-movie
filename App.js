@@ -2,7 +2,7 @@ import React from 'react';
 import {AppLoading, Font, Asset} from 'expo';
 import { StyleSheet, Text, View } from 'react-native';
 import {ionicons, Ionicons} from '@expo/vector-icons';
-
+import TabNavigation from "./navigation/TabNavigation.js";
 
 export default class App extends React.Component {
   state = {
@@ -28,9 +28,9 @@ export default class App extends React.Component {
 
     if (loaded) {
       return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
+        // <View style={styles.container}>
+          <TabNavigation />
+        // </View>
       );
     } else {
       return (
