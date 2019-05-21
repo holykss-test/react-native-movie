@@ -13,17 +13,19 @@ export default class App extends React.Component {
   handleLoaded = () => this.setState({loaded:true});
 
   loadAssets = async() => {
-    throw new Error("I am hungry");
+    // throw new Error("I am hungry");
     await Font.loadAsync({
       ...Ionicons.font
     })
-    // await Asset.loadAsync({
+    // await Asset.loadAsync([
     //   require("images/icon.png")
-    // })
+    // ])
 
   }
 
   render() {
+    const {loaded} = this.state
+
     if (loaded) {
       return (
         <View style={styles.container}>
@@ -31,10 +33,13 @@ export default class App extends React.Component {
         </View>
       );
     } else {
-      return <AppLoading 
-      startAsync={this.loadAssets}
-        onFinish={this.handleLoaded}
-         onError={this.handleError}/>;
+      return (
+      <AppLoading 
+        startAsync={this.loadAssets}
+          onFinish={this.handleLoaded}
+          onError={this.handleError}
+      />
+      );
     }
   }
 }
