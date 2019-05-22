@@ -12,19 +12,19 @@ const TabNavation = createBottomTabNavigator({
     Movies: { screen: MovieScreen, 
     navigationOptions:{
         tabBarIcon:({focused}) => (
-        <TabBarIcon focused={focused} name={(Platform.OS == "ios" ? "ios" : "md") + "-film"} />
+        <TabBarIcon focused={focused} name={prefix() + "-film"} />
     )
     }},
     TV: { screen: TVScreen, 
     navigationOptions:{
         tabBarIcon:({focused}) => (
-        <TabBarIcon focused={focused} name={(Platform.OS == "ios" ? "ios" : "md") + "-tv"} />
+        <TabBarIcon focused={focused} name={prefix() + "-tv"} />
     )
     }},
     Search: { screen: SearchScreen, 
     navigationOptions:{
         tabBarIcon:({focused}) => (
-        <TabBarIcon focused={focused} name={(Platform.OS == "ios" ? "ios" : "md") + "-search"} />
+        <TabBarIcon focused={focused} name={prefix() + "-search"} />
     )
     }}
 }, {
@@ -37,3 +37,7 @@ const TabNavation = createBottomTabNavigator({
 });
 
 export default createAppContainer(TabNavation);
+
+function prefix() {
+    return (Platform.OS == "ios" ? "ios" : "md");
+}
