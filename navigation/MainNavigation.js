@@ -1,4 +1,4 @@
-import { createStackNavigator, createAppContainer} from "react-navigation.";
+import { createStackNavigator, createAppContainer} from "react-navigation";
 import TabNavigation from "./TabNavigation";
 import DetailsScreen from "../screens/Details"
 
