@@ -1,13 +1,19 @@
 import { createStackNavigator, createAppContainer} from "react-navigation";
 import TabNavigation from "./TabNavigation";
-import DetailsScreen from "../screens/Details"
+import DetailScreen from "../screens/Detail"
+import { headerStyles } from "./config";
 
 const MainNavigation = createStackNavigator({
     Tabs: {screen: TabNavigation, navigationOptions: {header: null}},
     // TabNavigation,
-    Details:DetailsScreen
+    Detail: {
+        screen: DetailScreen,
+        navigationOptions: {
+          ...headerStyles
+        }
+      }
 }, {
-    // initialRouteName: "DetailsScreen"
+    // initialRouteName: "DetailScreen"
     mode:"float"
 });
 

@@ -7,4 +7,4 @@ iOS / Android Movie Discovery App built with React Native.
 - [ ] Movies
 - [ ] TV Show
 - [ ] Search
-- [ ] Details
+- [ ] Detail
