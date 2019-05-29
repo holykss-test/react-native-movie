@@ -4,17 +4,23 @@ import DetailScreen from "../screens/Detail"
 import { headerStyles } from "./config";
 
 const MainNavigation = createStackNavigator({
-    Tabs: {screen: TabNavigation, navigationOptions: {header: null}},
-    // TabNavigation,
+    Tabs: {
+        screen: TabNavigation,
+        navigationOptions: {
+          header: null
+        }
+      },
     Detail: {
         screen: DetailScreen,
         navigationOptions: {
           ...headerStyles
         }
       }
-}, {
-    // initialRouteName: "DetailScreen"
-    mode:"float"
-});
+}, 
+{
+    headerMode: "screen",
+    headerBackTitleVisible: false
+  }
+);
 
 export default createAppContainer(MainNavigation);
